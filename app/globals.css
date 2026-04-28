@@ -33,5 +33,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary {
-  @apply brutalist-border bg-[#4361EE] text-white px-8 py-4 font-mono font-bold uppercase brutalist-shadow hover:brutalist-shadow-hover active:shadow-none active:translate-x-[4px] active:translate-y-[4px] transition-all inline-block;
+  @apply brutalist-border bg-[#4361EE] text-white px-8 py-4 font-mono font-bold uppercase brutalist-shadow transition-all inline-block;
+}
+.btn-primary:hover {
+  box-shadow: 6px 6px 0 #000;
+  transform: translate(-2px, -2px);
+}
+.btn-primary:active {
+  box-shadow: none;
+  transform: translate(4px, 4px);
 }
