@@ -4,7 +4,8 @@ async function getProduct(id: string) {
   const res = await fetch('https://app.baget.ai/api/public/databases/1ce3c031-286a-4d71-a7cc-b37e2dfe7280/rows', {
     next: { revalidate: 3600 }
   });
-  const products = await res.json();
+  const data = await res.json();
+  const products = Array.isArray(data) ? data : (data?.rows ?? []);
   return products.find((p: any) => p.id === id);
 }
 

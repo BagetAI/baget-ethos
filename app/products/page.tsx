@@ -3,7 +3,7 @@ async function getProducts() {
     next: { revalidate: 3600 }
   });
   const data = await res.json();
-  return data;
+  return Array.isArray(data) ? data : (data?.rows ?? []);
 }
 
 export default async function DirectoryPage() {

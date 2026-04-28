@@ -5,7 +5,8 @@ async function getProducts() {
     next: { revalidate: 3600 }
   });
   const data = await res.json();
-  return data.slice(0, 3); // Featured 3
+  const rows = Array.isArray(data) ? data : (data?.rows ?? []);
+  return rows.slice(0, 3); // Featured 3
 }
 
 export default async function HomePage() {
