@@ -1,3 +1,5 @@
+import VettingTool from '../../components/VettingTool';
+
 async function getProducts() {
   const res = await fetch('https://app.baget.ai/api/public/databases/1ce3c031-286a-4d71-a7cc-b37e2dfe7280/rows', {
     next: { revalidate: 3600 }
@@ -17,6 +19,9 @@ export default async function DirectoryPage() {
           50+ Verified sustainable products. Filtered for PFAS-free status and Carbon Neutrality.
         </p>
       </div>
+
+      {/* NEW: Instant Vetting Tool */}
+      <VettingTool />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {products.map((p: any) => (
