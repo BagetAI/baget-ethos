@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { Space_Mono, Work_Sans } from 'next/font/google';
 import './globals.css';
+import NewsletterStickyBar from '../components/NewsletterStickyBar';
+import ExitIntentPopup from '../components/ExitIntentPopup';
 
 const spaceMono = Space_Mono({ 
   subsets: ['latin'], 
@@ -31,6 +33,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${spaceMono.variable} ${workSans.variable} font-sans bg-[#FFFCE1] text-black`}>
+        <NewsletterStickyBar />
+        <ExitIntentPopup />
         <nav className="border-b-4 border-black p-6 flex justify-between items-center bg-white sticky top-0 z-50">
           <a href="/" className="text-3xl font-mono font-bold uppercase tracking-tighter">
             Ethos
